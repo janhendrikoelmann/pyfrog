@@ -44,7 +44,7 @@ def vanilla( trace, g_limit=1e-5,
 
     P_f = np.sqrt( abs(spectrum) ) * np.exp( -1j * phase )
     #TODO why is the frequency axis reversed
-    P_f = np.flip( P_f )
+    P_f = np.flipud( P_f )
     P_t = np.fft.ifft( P_f )
 
     if (spectrum_gate is None) or (phase_gate is None):
@@ -99,7 +99,7 @@ def vanilla( trace, g_limit=1e-5,
     E = np.fft.ifft( E_best )
     E /= np.amax( abs( E ) )
     #TODO why is the frequency axis reversed
-    return np.flip( E )
+    return np.flipud( E )
 
 
 def pcgpa( trace, method='svd', g_limit=1e-10,
@@ -208,7 +208,7 @@ def pcgpa( trace, method='svd', g_limit=1e-10,
     E = np.fft.ifft( E_t )
     E /= np.amax( abs( E ) )
     #TODO why is the frequency axis reversed
-    return np.flip( E )
+    return np.flipud( E )
 
 
 def rana_spectrum( trace, padding=None, threshold=1e-3 ):
