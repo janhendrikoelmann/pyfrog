@@ -86,11 +86,11 @@ def simple_frog_result_plot( f, f_c, tau, E_f, trace, plotstyle='frequency', **k
         ax6.set_ylabel('frequency (THz)')
         ax7.set_ylabel('frequency (THz)')
     else:
-        lamf = np.flip( cst.c / (f+f_c) ) * 1e9
+        lamf = np.flipud( cst.c / (f+f_c) ) * 1e9
         lamf_fun = lamf * 2
-        ret_spectrum = np.flip( ret_spectrum ) / (lamf*1e-9)**2
+        ret_spectrum = np.flipud( ret_spectrum ) / (lamf*1e-9)**2
         ret_spectrum /= np.amax( ret_spectrum )
-        ret_phase = np.flip( ret_phase )
+        ret_phase = np.flipud( ret_phase )
         trace = np.flipud( trace )
         ret_trace = np.flipud( ret_trace )
         ax1.set_xlabel('wavelength (nm)')
